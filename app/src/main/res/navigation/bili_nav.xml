@@ -3,20 +3,20 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/bili_nav"
-    app:startDestination="@id/mainFragment">
+    app:startDestination="@id/homeFragment">
 
     <fragment
-        android:id="@+id/mainFragment"
+        android:id="@+id/homeFragment"
         android:name="cn.tanghz17.bilidata.HomeFragment"
-        android:label="fragment_main"
-        tools:layout="@layout/fragment_main" >
+        android:label="home_fragment"
+        tools:layout="@layout/home_fragment" >
         <action
-            android:id="@+id/action_mainFragment_to_videoDataFragment"
+            android:id="@+id/action_homeFragment_to_videoDataFragment2"
             app:destination="@id/videoDataFragment" />
     </fragment>
     <fragment
         android:id="@+id/videoDataFragment"
         android:name="cn.tanghz17.bilidata.VideoDataFragment"
-        android:label="fragment_video_data"
-        tools:layout="@layout/fragment_video_data" />
+        android:label="video_data_fragment"
+        tools:layout="@layout/video_data_fragment" />
 </navigation>

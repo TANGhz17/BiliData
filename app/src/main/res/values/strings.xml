@@ -4,5 +4,5 @@
     <string name="video_nunber_edit_msg">Use BV Number</string>
     <string name="info_show">INFO SHOW</string>
     <string name="search_msg">search</string>
-    <string name="main_fragment_title">MAIN</string>
+    <string name="main_fragment_title">HOME</string>
 </resources>

@@ -8,7 +8,7 @@
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
-        android:id="@+id/MainTitle"
+        android:id="@+id/HomeTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/main_fragment_title"
