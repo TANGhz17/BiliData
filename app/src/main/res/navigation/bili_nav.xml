@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bili_nav"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="cn.tanghz17.bilidata.HomeFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_videoDataFragment"
+            app:destination="@id/videoDataFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/videoDataFragment"
+        android:name="cn.tanghz17.bilidata.VideoDataFragment"
+        android:label="fragment_video_data"
+        tools:layout="@layout/fragment_video_data" />
+</navigation>
