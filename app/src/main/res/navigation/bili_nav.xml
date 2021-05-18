@@ -7,16 +7,17 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="cn.tanghz17.bilidata.HomeFragment"
-        android:label="home_fragment"
-        tools:layout="@layout/home_fragment" >
-        <action
-            android:id="@+id/action_homeFragment_to_videoDataFragment2"
-            app:destination="@id/videoDataFragment" />
-    </fragment>
+        android:name="cn.tanghz17.bilidata.ui.home.HomeFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/home_fragment" />
     <fragment
         android:id="@+id/videoDataFragment"
-        android:name="cn.tanghz17.bilidata.VideoDataFragment"
-        android:label="video_data_fragment"
+        android:name="cn.tanghz17.bilidata.ui.videoData.VideoDataFragment"
+        android:label="@string/title_video_data"
         tools:layout="@layout/video_data_fragment" />
+    <fragment
+        android:id="@+id/upDataFragment"
+        android:name="cn.tanghz17.bilidata.ui.upData.UpDataFragment"
+        android:label="@string/title_up_data"
+        tools:layout="@layout/up_data_fragment" />
 </navigation>

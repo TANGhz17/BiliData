@@ -1,30 +1,31 @@
-package cn.tanghz17.bilidata
+package cn.tanghz17.bilidata.ui.upData
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
+import cn.tanghz17.bilidata.R
 
-class VideoDataFragment : Fragment() {
+class UpDataFragment : Fragment() {
 
     companion object {
-        fun newInstance() = VideoDataFragment()
+        fun newInstance() = UpDataFragment()
     }
 
-    private lateinit var viewModel: VideoDataViewModel
+    private lateinit var viewModel: UpDataViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.video_data_fragment, container, false)
+        return inflater.inflate(R.layout.up_data_fragment, container, false)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(VideoDataViewModel::class.java)
+        viewModel = ViewModelProvider(this).get(UpDataViewModel::class.java)
         // TODO: Use the ViewModel
     }
 

@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HomeFragment">
+    tools:context=".ui.home.HomeFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
-        android:id="@+id/HomeTitle"
+        android:id="@+id/TitleHome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/main_fragment_title"
+        android:text="@string/title_home"
         android:textSize="36sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

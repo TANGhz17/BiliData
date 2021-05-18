@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">BiliData</string>
-    <string name="video_nunber_edit_msg">Use BV Number</string>
+    <string name="video_number_edit_msg">Use BV Number</string>
     <string name="info_show">INFO SHOW</string>
     <string name="search_msg">search</string>
-    <string name="main_fragment_title">HOME</string>
+    <string name="up_name">UpName</string>
+    <string name="up_info_view">UpInfoView</string>
+    <string name="title_home">Home</string>
+    <string name="title_video_data">VideoData</string>
+    <string name="title_up_data">UpData</string>
 </resources>

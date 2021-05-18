@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/homeFragment"
+        android:icon="@drawable/ic_baseline_home_24"
+        android:title="@string/title_home" />
+    <item
+        android:id="@+id/videoDataFragment"
+        android:icon="@drawable/ic_bili_shell"
+        android:title="@string/title_video_data" />
+    <item
+        android:id="@+id/upDataFragment"
+        android:icon="@drawable/ic_bili_up"
+        android:title="@string/title_up_data" />
+</menu>

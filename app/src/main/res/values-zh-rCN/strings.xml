@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">BiliData</string>
-    <string name="video_nunber_edit_msg">请输入B站视频BV号</string>
+    <string name="video_number_edit_msg">请输入B站视频BV号</string>
     <string name="search_msg">搜索</string>
     <string name="info_show">信息显示</string>
-    <string name="main_fragment_title">主界面</string>
+    <string name="up_name">UP名称</string>
+    <string name="up_info_view">up相关信息</string>
+    <string name="title_home">主界面</string>
+    <string name="title_video_data">视频数据</string>
+    <string name="title_up_data">UP主数据</string>
 </resources>
