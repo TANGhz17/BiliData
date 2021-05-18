@@ -4,14 +4,11 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.EditText
-import android.widget.TextView
 import androidx.fragment.app.Fragment
-import cn.tanghz17.bilidata.R
+import androidx.lifecycle.ViewModelProvider
 import cn.tanghz17.bilidata.databinding.VideoDataFragmentBinding
 
-class VideoDataFragment : Fragment() {
+class VideoDataFragment : Fragment(), View.OnClickListener {
 
     private lateinit var binding: VideoDataFragmentBinding
 
@@ -22,11 +19,21 @@ class VideoDataFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val view:View=inflater.inflate(R.layout.video_data_fragment, container, false )
-        val button: Button = view.findViewById(R.id.searchButton)
-        button.setOnClickListener {
-            view.findViewById<TextView>(R.id.infoView).text=view.findViewById<EditText>(R.id.videoEditText).text
-        }
-        return view
+        binding = VideoDataFragmentBinding.inflate(layoutInflater)
+
+        return binding.root
     }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+        viewModel = ViewModelProvider(this).get(VideoDataViewModel::class.java)
+
+        binding.searchButton.setOnClickListener(this)
+        // TODO: Use the ViewModel
+
+    }
+    override fun onClick(v:View){
+        binding.infoView.text=binding.videoEditText.text
+    }
+
 }
