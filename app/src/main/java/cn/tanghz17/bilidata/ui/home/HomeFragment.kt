@@ -10,12 +10,7 @@ import cn.tanghz17.bilidata.databinding.HomeFragmentBinding
 
 class HomeFragment : Fragment() {
 
-    private lateinit var homeViewModel: HomeViewModel
-    private var _binding: HomeFragmentBinding? = null
-
-    // This property is only valid between onCreateView and
-    // onDestroyView.
-    private val binding get() = _binding!!
+    private var binding: HomeFragmentBinding? = null
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -27,7 +22,7 @@ class HomeFragment : Fragment() {
 
     override fun onDestroyView() {
         super.onDestroyView()
-        _binding = null
+        binding = null
     }
 
 }

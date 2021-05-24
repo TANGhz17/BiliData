@@ -10,10 +10,6 @@ import cn.tanghz17.bilidata.R
 
 class UpDataFragment : Fragment() {
 
-    companion object {
-        fun newInstance() = UpDataFragment()
-    }
-
     private lateinit var viewModel: UpDataViewModel
 
     override fun onCreateView(

@@ -8,9 +8,11 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import cn.tanghz17.bilidata.databinding.VideoDataFragmentBinding
 
-class VideoDataFragment : Fragment(), View.OnClickListener {
+class VideoDataFragment : Fragment() {
 
-    private lateinit var binding: VideoDataFragmentBinding
+    private var _binding: VideoDataFragmentBinding?=null
+
+    private val binding get() = _binding!!
 
     private lateinit var viewModel: VideoDataViewModel
 
@@ -19,8 +21,7 @@ class VideoDataFragment : Fragment(), View.OnClickListener {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = VideoDataFragmentBinding.inflate(layoutInflater)
-
+        _binding = VideoDataFragmentBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -28,14 +29,12 @@ class VideoDataFragment : Fragment(), View.OnClickListener {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProvider(this).get(VideoDataViewModel::class.java)
 
-        binding.searchButton.setOnClickListener(this)
         // TODO: Use the ViewModel
-
-    }
-    override fun onClick(v:View){
-//        binding.infoView.text=binding.videoEditText.text
-//        viewModel.setNumber(binding.videoEditText.text.toString())
-//        binding.infoView.text=viewModel.getNumber().value
     }
 
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
 }
