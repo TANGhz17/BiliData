@@ -1,22 +1,26 @@
 package cn.tanghz17.bilidata.ui.videoData
 
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
-import cn.tanghz17.bilidata.databinding.VideoDataFragmentBinding
+import androidx.lifecycle.*
+import cn.tanghz17.bilidata.db.videoData.VideoData
+import cn.tanghz17.bilidata.db.videoData.VideoDataRepository
+import kotlinx.coroutines.launch
 
-class VideoDataViewModel : ViewModel() {
-    // TODO: Implement the ViewModel
-    private lateinit var binding: VideoDataFragmentBinding
+class VideoDataViewModel(private val repository: VideoDataRepository) : ViewModel() {
+    // TODO: Implement the ViewMode
+    val allVideoData :LiveData<List<VideoData>> = repository.allVideoData.asLiveData()
 
-    private lateinit var number:MutableLiveData<String>
-
-    private fun getNumber():MutableLiveData<String>{
-        number.value=binding.videoEditText.toString()
-        return number
+    fun insert(videoData: VideoData) = viewModelScope.launch {
+        repository.insert(videoData)
     }
-
-    fun showNumber() {
-        binding.infoView.text=getNumber().value
+}
+class VideoDataViewModelFactory(
+    private val repository: VideoDataRepository
+    ):ViewModelProvider.Factory {
+    override fun <T : ViewModel?> create(modelClass: Class<T>): T {
+        if (modelClass.isAssignableFrom(VideoDataViewModel::class.java)) {
+            @Suppress("UNCHECKED_CAST")
+            return VideoDataViewModel(repository) as T
+        }
+        throw IllegalAccessException("Unknown ViewModel class")
     }
-
 }

@@ -33,7 +33,9 @@ class VideoDataFragment : Fragment(), View.OnClickListener {
 
     }
     override fun onClick(v:View){
-        binding.infoView.text=binding.videoEditText.text
+//        binding.infoView.text=binding.videoEditText.text
+//        viewModel.setNumber(binding.videoEditText.text.toString())
+//        binding.infoView.text=viewModel.getNumber().value
     }
 
 }
