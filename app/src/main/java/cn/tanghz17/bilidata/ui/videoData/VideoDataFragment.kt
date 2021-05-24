@@ -29,9 +29,12 @@ class VideoDataFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProvider(this).get(VideoDataViewModel::class.java)
 
+        binding.searchButton.setOnClickListener {
+            viewModel.getData(binding.videoEditText.text.toString())
+            binding.infoView.text=viewModel.getInfoView()
+        }
         // TODO: Use the ViewModel
     }
-
 
     override fun onDestroyView() {
         super.onDestroyView()

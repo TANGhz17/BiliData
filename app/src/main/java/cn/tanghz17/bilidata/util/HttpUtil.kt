@@ -1,4 +1,3 @@
 package cn.tanghz17.bilidata.util
 
-class HttpUtil {
-}
+class HttpUtil
