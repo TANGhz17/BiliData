@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.SearchView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import cn.tanghz17.bilidata.databinding.VideoDataFragmentBinding
@@ -31,11 +32,22 @@ class VideoDataFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProvider(this).get(VideoDataViewModel::class.java)
 
-        binding.searchButton.setOnClickListener {
-            viewModel.getData(binding.videoEditText.text.toString())
-            binding.infoView.text=viewModel.getInfoView()
-            binding.infoImageView.load(viewModel.getImageURI())
-        }
+        binding.videoSearchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener{
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                binding.infoView.text=viewModel.getInfoView()
+                binding.infoImageView.load(viewModel.getImageURI())
+                return false
+            }
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+                viewModel.getData(newText.toString())
+                binding.infoView.text=viewModel.getInfoView()
+                binding.infoImageView.load(viewModel.getImageURI())
+                return false
+            }
+
+        })
+
         // TODO: Use the ViewModel
     }
 
