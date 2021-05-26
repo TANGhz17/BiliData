@@ -6,9 +6,11 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
 import cn.tanghz17.bilidata.db.videoData.VideoData
 import com.android.volley.Request
+import com.android.volley.toolbox.ImageLoader
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
 import com.google.gson.Gson
+import java.net.URL
 
 class VideoDataViewModel(application: Application) : AndroidViewModel(application) {
     private val videoDataLive = MutableLiveData<VideoData>()
@@ -52,5 +54,12 @@ class VideoDataViewModel(application: Application) : AndroidViewModel(applicatio
                 "分享数：\t" + videoDataLive.value?.data?.stat?.share
 
         return msgInfo
+    }
+
+    fun getImageURI() : String? {
+        if (videoDataLive.value == null) {
+            return null
+        }
+        return videoDataLive.value?.data?.pic
     }
 }

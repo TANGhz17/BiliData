@@ -4,6 +4,7 @@ package cn.tanghz17.bilidata.db.videoData
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
+import java.net.URL
 
 @Entity(tableName = "VideoData")
 data class VideoData(

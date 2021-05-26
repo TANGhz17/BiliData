@@ -4,9 +4,11 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import cn.tanghz17.bilidata.databinding.VideoDataFragmentBinding
+import coil.load
 
 class VideoDataFragment : Fragment() {
 
@@ -32,6 +34,7 @@ class VideoDataFragment : Fragment() {
         binding.searchButton.setOnClickListener {
             viewModel.getData(binding.videoEditText.text.toString())
             binding.infoView.text=viewModel.getInfoView()
+            binding.infoImageView.load(viewModel.getImageURI())
         }
         // TODO: Use the ViewModel
     }
