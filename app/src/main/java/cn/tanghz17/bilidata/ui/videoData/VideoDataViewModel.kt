@@ -37,8 +37,8 @@ class VideoDataViewModel(application: Application) : AndroidViewModel(applicatio
     }
 
     fun getInfoView(): String {
-        if (videoDataLive.value == null) {
-            return "无信息"
+        if (videoDataLive.value?.data?.title == null) {
+            return msgInfo
         }
         Log.d("getInfoView" , videoDataLive.value.toString()+"\n"+url)
         msgInfo="标题：\t\t " + videoDataLive.value?.data?.title + "\n" +
@@ -57,7 +57,7 @@ class VideoDataViewModel(application: Application) : AndroidViewModel(applicatio
     }
 
     fun getImageURI() : String? {
-        if (videoDataLive.value == null) {
+        if (videoDataLive.value?.data?.title == null) {
             return null
         }
         return videoDataLive.value?.data?.pic

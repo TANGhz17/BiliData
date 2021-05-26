@@ -10,10 +10,9 @@
 - 1.0
    - 实现了查看B站视频详细信息的功能
 #### 准备更新的功能：
- > 1. 视频信息查看界面变为分界面，设置左划栏，显示其他功能
- > 2. 添加评论区抽奖功能
- > 3. 绑定使用者与up主，获取个人视频数据
- > 4. 使用后台数据存储，生成数据曲线
+ > 1. 添加评论区抽奖功能
+ > 2. 绑定使用者与up主，获取个人视频数据
+ > 3. 使用后台数据存储，生成数据曲线
 
 ## Authors and acknowledgment | 贡献代码
  - @Author:[TANGhz17](https://github.com/TANGhz17)
@@ -23,5 +22,6 @@
  
 ## Thinks | 特别感谢
  > - [bilibili-API-collect](https://github.com/SocialSisterYi/bilibili-API-collect)
+ > - [coil](https://coil-kt.github.io/coil)
 
 #### Copyright (C)2020-2021 TANGhz17

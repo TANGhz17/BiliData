@@ -7,22 +7,38 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import cn.tanghz17.bilidata.R
+import cn.tanghz17.bilidata.databinding.UpDataFragmentBinding
+import cn.tanghz17.bilidata.databinding.VideoDataFragmentBinding
 
 class UpDataFragment : Fragment() {
+
+    private var _binding: UpDataFragmentBinding?=null
+
+    private val binding get() = _binding!!
 
     private lateinit var viewModel: UpDataViewModel
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.up_data_fragment, container, false)
+        _binding = UpDataFragmentBinding.inflate(inflater,container,false)
+
+        return binding.root
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProvider(this).get(UpDataViewModel::class.java)
+
+
+
         // TODO: Use the ViewModel
     }
 
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
 }
