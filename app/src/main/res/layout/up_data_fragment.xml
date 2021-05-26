@@ -7,6 +7,14 @@
     android:layout_height="match_parent"
     tools:context=".ui.upData.UpDataFragment">
 
+    <SearchView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline7"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline6" />
+
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="0dp"
@@ -71,12 +79,12 @@
         android:id="@+id/UpNameView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/up_name"
         android:textSize="36sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline7"
         app:layout_constraintEnd_toStartOf="@+id/guideline10"
         app:layout_constraintStart_toStartOf="@+id/guideline9"
-        app:layout_constraintTop_toTopOf="@+id/guideline6" />
+        app:layout_constraintTop_toTopOf="@+id/guideline6"
+        tools:text="@string/up_name" />
 
     <ScrollView
         android:layout_width="0dp"
@@ -95,7 +103,7 @@
                 android:id="@+id/UpInfoView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/up_info_view" />
+                tools:text="@string/up_info_view" />
         </LinearLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

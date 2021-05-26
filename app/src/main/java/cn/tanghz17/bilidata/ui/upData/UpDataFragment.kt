@@ -6,9 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import cn.tanghz17.bilidata.R
 import cn.tanghz17.bilidata.databinding.UpDataFragmentBinding
-import cn.tanghz17.bilidata.databinding.VideoDataFragmentBinding
 
 class UpDataFragment : Fragment() {
 
@@ -24,6 +22,8 @@ class UpDataFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         _binding = UpDataFragmentBinding.inflate(inflater,container,false)
+
+
 
         return binding.root
     }
