@@ -10,4 +10,6 @@
     <string name="title_video_data">VideoData</string>
     <string name="title_up_data">UpData</string>
     <string name="todo">TODO</string>
+    <string name="action_setting">setting</string>
+    <string name="action_search">search</string>
 </resources>
