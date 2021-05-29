@@ -9,4 +9,8 @@
     <string name="title_home">主界面</string>
     <string name="title_video_data">视频数据</string>
     <string name="title_up_data">UP主数据</string>
+    <string name="search_hint">搜索up</string>
+    <string name="action_search">搜索</string>
+    <string name="action_setting">设置</string>
+    <string name="todo">TODO</string>
 </resources>

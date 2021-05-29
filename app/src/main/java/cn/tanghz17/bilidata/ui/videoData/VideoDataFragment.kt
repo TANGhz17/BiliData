@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import android.widget.SearchView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
@@ -32,20 +31,19 @@ class VideoDataFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProvider(this).get(VideoDataViewModel::class.java)
 
-        binding.videoSearchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener{
-            override fun onQueryTextSubmit(query: String?): Boolean {
-                binding.infoView.text=viewModel.getInfoView()
-                binding.infoImageView.load(viewModel.getImageURI())
-                return false
-            }
-
-            override fun onQueryTextChange(newText: String?): Boolean {
-                viewModel.getData(newText.toString())
-                binding.infoView.text=viewModel.getInfoView()
-                binding.infoImageView.load(viewModel.getImageURI())
-                return false
-            }
-
+        binding.videoSearchView.setOnQueryTextListener(
+            object : SearchView.OnQueryTextListener{
+                override fun onQueryTextChange(newText: String?): Boolean {
+                    viewModel.getData(newText.toString())
+    //                binding.infoView.text=viewModel.getInfoView()
+    //                binding.infoImageView.load(viewModel.getImageURI())
+                    return false
+                }
+                override fun onQueryTextSubmit(query: String?): Boolean {
+                    binding.infoView.text=viewModel.getInfoView()
+                    binding.infoImageView.load(viewModel.getImageURI())
+                    return false
+                }
         })
 
         // TODO: Use the ViewModel

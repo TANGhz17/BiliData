@@ -6,20 +6,18 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
 import cn.tanghz17.bilidata.db.videoData.VideoData
 import com.android.volley.Request
-import com.android.volley.toolbox.ImageLoader
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
 import com.google.gson.Gson
-import java.net.URL
 
 class VideoDataViewModel(application: Application) : AndroidViewModel(application) {
     private val videoDataLive = MutableLiveData<VideoData>()
     private val queue = Volley.newRequestQueue(getApplication())
-    private var url="http://api.bilibili.com/x/web-interface/view?bvid="
+    private var url:String = "null"
     private var msgInfo: String = "无信息"
 
     fun getData(string: String) {
-        var videoDataNumber:String = string//"BV1J4411U7cE"
+        val videoDataNumber:String = string//"BV1J4411U7cE"
         url = "http://api.bilibili.com/x/web-interface/view?bvid=$videoDataNumber"
 
         val stringRequest = StringRequest(

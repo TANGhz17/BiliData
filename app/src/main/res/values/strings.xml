@@ -12,4 +12,5 @@
     <string name="todo">TODO</string>
     <string name="action_setting">setting</string>
     <string name="action_search">search</string>
+    <string name="search_hint">search up</string>
 </resources>
