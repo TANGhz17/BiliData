@@ -12,7 +12,7 @@ android {
         minSdkVersion 25
         targetSdkVersion 30
         versionCode 1
-        versionName "1.0.1"
+        versionName "1.0.2"
 
         //指定room.schemaLocation生成的文件路径  处理Room 警告 Schema export Error
         javaCompileOptions {

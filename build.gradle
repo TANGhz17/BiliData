@@ -2,8 +2,11 @@
 buildscript {
     ext.kotlin_version = "1.5.0"
     repositories {
+        maven { url 'https://maven.aliyun.com/repository/google'}
+        maven { url 'https://maven.aliyun.com/repository/public'}
+        maven { url 'https://maven.aliyun.com/repository/gradle-plugin'}
         google()
-        mavenCentral()
+//        mavenCentral()
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:4.2.1'
@@ -16,8 +19,11 @@ buildscript {
 
 allprojects {
     repositories {
+        maven { url 'https://maven.aliyun.com/repository/google'}
+        maven { url 'https://maven.aliyun.com/repository/public'}
+        maven { url 'https://maven.aliyun.com/repository/gradle-plugin'}
         google()
-        mavenCentral()
+//        mavenCentral()
     }
 }
 

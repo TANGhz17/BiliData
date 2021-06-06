@@ -26,5 +26,20 @@
       <option name="name" value="MavenRepo" />
       <option name="url" value="https://repo.maven.apache.org/maven2/" />
     </remote-repository>
+    <remote-repository>
+      <option name="id" value="47a8fdca-c8cb-4cfd-80f0-931c289802ec" />
+      <option name="name" value="47a8fdca-c8cb-4cfd-80f0-931c289802ec" />
+      <option name="url" value="https://maven.aliyun.com/repository/google" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="b2122ecb-cbbd-40de-98c0-fcb6b1a24697" />
+      <option name="name" value="b2122ecb-cbbd-40de-98c0-fcb6b1a24697" />
+      <option name="url" value="https://maven.aliyun.com/repository/public" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="maven3" />
+      <option name="name" value="maven3" />
+      <option name="url" value="https://maven.aliyun.com/repository/gradle-plugin" />
+    </remote-repository>
   </component>
 </project>

@@ -31,7 +31,7 @@
             app:layout_constraintGuide_percent="0.96" />
 
         <ImageView
-            android:id="@+id/imageView"
+            android:id="@+id/videoCover"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginTop="8dp"
@@ -45,7 +45,7 @@
             tools:srcCompat="@drawable/img_fm" />
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/videoTitle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -56,12 +56,12 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/guideline16"
             app:layout_constraintStart_toStartOf="@+id/guideline15"
-            app:layout_constraintTop_toTopOf="@+id/imageView"
+            app:layout_constraintTop_toTopOf="@+id/videoCover"
             app:layout_constraintVertical_bias="0.0"
             tools:text="怎么能在饿人面前吃得这么香（算我一个" />
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/dmData"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -78,7 +78,7 @@
             tools:text="1.6w弹幕" />
 
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/videoScore"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -89,54 +89,54 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/guideline16"
             app:layout_constraintStart_toStartOf="@+id/guideline15"
-            app:layout_constraintTop_toBottomOf="@+id/textView2"
+            app:layout_constraintTop_toBottomOf="@+id/dmData"
             app:layout_constraintVertical_bias="0.04000002"
             tools:text="综合评分：999999" />
 
         <TextView
-            android:id="@+id/textView5"
+            android:id="@+id/upName"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp"
+            android:layout_marginEnd="128dp"
             android:fontFamily="sans-serif-black"
             android:textColor="#000000"
             android:textSize="10sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/guideline16"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/imageView2"
-            app:layout_constraintTop_toTopOf="@+id/imageView2"
+            app:layout_constraintStart_toEndOf="@+id/upface"
+            app:layout_constraintTop_toTopOf="@+id/upface"
             app:layout_constraintVertical_bias="0.0"
             tools:text="TANGhz17" />
 
         <TextView
-            android:id="@+id/textView4"
+            android:id="@+id/fansNumber"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginTop="6dp"
-            android:layout_marginEnd="8dp"
             android:textColor="#B5A7A7"
             android:textSize="8sp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/guideline16"
+            app:layout_constraintEnd_toStartOf="@+id/guideline15"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/imageView2"
-            app:layout_constraintTop_toBottomOf="@+id/textView5"
+            app:layout_constraintStart_toEndOf="@+id/upface"
+            app:layout_constraintTop_toBottomOf="@+id/upName"
             app:layout_constraintVertical_bias="0.0"
             tools:text="999.9w关注" />
 
         <ImageView
-            android:id="@+id/imageView2"
+            android:id="@+id/upface"
             android:layout_width="32dp"
             android:layout_height="32dp"
+            android:layout_marginStart="2dp"
             android:layout_marginBottom="8dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/guideline15"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/guideline14"
-            app:layout_constraintTop_toBottomOf="@+id/imageView"
+            app:layout_constraintTop_toBottomOf="@+id/videoCover"
             app:layout_constraintVertical_bias="1.0"
             tools:srcCompat="@drawable/tanghz17" />
 
