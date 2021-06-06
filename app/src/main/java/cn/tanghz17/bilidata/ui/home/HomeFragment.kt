@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.ConcatAdapter
 import androidx.recyclerview.widget.RecyclerView
 import cn.tanghz17.bilidata.R
@@ -16,6 +17,10 @@ import cn.tanghz17.bilidata.ui.home.Detail.RankingItemDetailActivity
 const val RANKING_ID = "ranking id"
 
 class HomeFragment : Fragment() {
+
+    private val homeViewModel by viewModels<HomeViewModel>{
+        RankingItemListViewModelFactory(this.requireContext())
+    }
 
     private var binding: HomeFragmentBinding? = null
 
@@ -36,6 +41,8 @@ class HomeFragment : Fragment() {
         val recyclerView : RecyclerView = view.findViewById(R.id.recyclerView)
         recyclerView.adapter = concatAdapter
 
+
+
     }
 
     private fun adapterOnClick(rankingItem: RankingItem){
@@ -50,3 +57,4 @@ class HomeFragment : Fragment() {
     }
 
 }
+
