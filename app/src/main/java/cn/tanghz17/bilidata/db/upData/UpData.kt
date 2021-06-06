@@ -64,7 +64,7 @@ data class UpData(
         @SerializedName("user_honour_info")
         val userHonourInfo: UserHonourInfo,
         @SerializedName("vip")
-        val vip: Vip
+        val vip: String
     ) {
         data class LiveRoom(
             @SerializedName("broadcast_type")
