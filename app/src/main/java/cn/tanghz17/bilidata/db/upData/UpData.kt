@@ -128,11 +128,9 @@ data class UpData(
             val pid: Int // 4973
         )
 
-        class SysNotice(
-        )
+        class SysNotice
 
-        class Theme(
-        )
+        class Theme
 
         data class UserHonourInfo(
             @SerializedName("colour")

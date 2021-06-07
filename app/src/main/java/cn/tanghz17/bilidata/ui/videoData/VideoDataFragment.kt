@@ -33,8 +33,6 @@ class VideoDataFragment : Fragment() {
             object : SearchView.OnQueryTextListener{
                 override fun onQueryTextChange(newText: String?): Boolean {
                     viewModel.getData(newText.toString())
-    //                binding.infoView.text=viewModel.getInfoView()
-    //                binding.infoImageView.load(viewModel.getImageURI())
                     return false
                 }
                 override fun onQueryTextSubmit(query: String?): Boolean {
@@ -43,8 +41,6 @@ class VideoDataFragment : Fragment() {
                     return false
                 }
         })
-
-        // TODO: Use the ViewModel
     }
 
     override fun onDestroyView() {

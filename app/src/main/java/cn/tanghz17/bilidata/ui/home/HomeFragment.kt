@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import cn.tanghz17.bilidata.databinding.HomeFragmentBinding
 
@@ -39,9 +38,15 @@ class HomeFragment : Fragment() {
         viewModel = ViewModelProvider(this).get(HomeViewModel::class.java)
         viewModel.rankingItemLive.observe(this.viewLifecycleOwner, Observer {
             rankingItemAdapter.submitList(it)
+            binding.swipeRefresh.isRefreshing = false
         })
 
         viewModel.rankingItemLive.value?:viewModel.fetchData()
+
+        binding.swipeRefresh.setOnRefreshListener {
+            viewModel.fetchData()
+
+        }
     }
 
     override fun onDestroyView() {

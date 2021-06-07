@@ -30,6 +30,8 @@ class HomeViewModel(application: Application) : AndroidViewModel(application) {
         VolleySingleton.getInstance(getApplication()).requestQueue.add(stringRequest)
     }
     private fun getUrl():String{
-        return "http://api.bilibili.com/x/web-interface/ranking/region?rid=3"
+        return "http://api.bilibili.com/x/web-interface/ranking/region?rid=${keyRid.random()}"
     }
+
+    private val keyRid = arrayOf(1,13,167,3,129,4,36,188,223,160,211,218,119,155,202,5,181,177,23,11)
 }

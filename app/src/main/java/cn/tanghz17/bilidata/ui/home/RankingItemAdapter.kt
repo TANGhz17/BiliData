@@ -1,5 +1,6 @@
 package cn.tanghz17.bilidata.ui.home
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -21,13 +22,19 @@ class RankingItemAdapter : ListAdapter<RankingItem,RankingItemViewHolder>(DIFFCA
         return holder
     }
 
+    @SuppressLint("SetTextI18n")
     override fun onBindViewHolder(holder: RankingItemViewHolder, position: Int) {
         val videoCover = holder.itemView.findViewById<ImageView>(R.id.videoCover)
         val videoTitle = holder.itemView.findViewById<TextView>(R.id.videoTitle)
         val upName = holder.itemView.findViewById<TextView>(R.id.upName)
 
         videoCover.load(getItem(position).pic)
-        videoTitle.text = getItem(position).title
+        if (getItem(position).title.length<=25){
+            videoTitle.text = getItem(position).title
+        }else{
+            videoTitle.text = getItem(position).title.substring(0,25)+"..."
+        }
+
         upName.text = getItem(position).author
     }
 
