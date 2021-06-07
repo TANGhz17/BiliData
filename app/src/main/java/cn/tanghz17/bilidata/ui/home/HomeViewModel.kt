@@ -1,24 +1,35 @@
 package cn.tanghz17.bilidata.ui.home
 
-import android.content.Context
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.ViewModelProvider
-import cn.tanghz17.bilidata.db.home.DataSource
+import android.app.Application
+import android.util.Log
+import androidx.lifecycle.AndroidViewModel
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MediatorLiveData
+import cn.tanghz17.bilidata.db.home.Ranking
+import cn.tanghz17.bilidata.db.home.RankingItem
+import com.android.volley.Request
+import com.android.volley.toolbox.StringRequest
+import com.google.gson.Gson
 
-class HomeViewModel(val dataSource: DataSource) : ViewModel() {
-    val rankingItemLiveData = dataSource.getRankingItemList()
+class HomeViewModel(application: Application) : AndroidViewModel(application) {
+    private val _rankingItemLive = MediatorLiveData<List<RankingItem>>()
+    val rankingItemLive : LiveData<List<RankingItem>>
+    get() = _rankingItemLive
 
-}
-
-class RankingItemListViewModelFactory(private val context: Context) : ViewModelProvider.Factory{
-    override fun <T : ViewModel> create(modelClass: Class<T>): T {
-        if (modelClass.isAssignableFrom(HomeViewModel::class.java)) {
-            @Suppress("UNCHECKED_CAST")
-            return HomeViewModel(
-                dataSource = DataSource.getDataSource(context.resources)
-            ) as T
-
-        }
-        throw IllegalAccessException("Unknown ViewModel class")
+    fun fetchData() {
+        val stringRequest = StringRequest(
+            Request.Method.GET,
+            getUrl(),
+            {
+                _rankingItemLive.value = Gson().fromJson(it, Ranking::class.java).data.toList()
+            },
+            {
+                Log.d("fetchData()",it.toString())
+            }
+        )
+        VolleySingleton.getInstance(getApplication()).requestQueue.add(stringRequest)
+    }
+    private fun getUrl():String{
+        return "http://api.bilibili.com/x/web-interface/ranking/region?rid=3"
     }
 }

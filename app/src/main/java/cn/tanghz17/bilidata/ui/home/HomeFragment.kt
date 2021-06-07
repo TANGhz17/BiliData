@@ -1,59 +1,52 @@
 package cn.tanghz17.bilidata.ui.home
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
-import androidx.recyclerview.widget.ConcatAdapter
-import androidx.recyclerview.widget.RecyclerView
-import cn.tanghz17.bilidata.R
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import cn.tanghz17.bilidata.databinding.HomeFragmentBinding
-import cn.tanghz17.bilidata.db.home.RankingItem
-import cn.tanghz17.bilidata.ui.home.Detail.RankingItemDetailActivity
-
-const val RANKING_ID = "ranking id"
 
 class HomeFragment : Fragment() {
 
-    private val homeViewModel by viewModels<HomeViewModel>{
-        RankingItemListViewModelFactory(this.requireContext())
-    }
+    private var _binding: HomeFragmentBinding? = null
+    private val binding get() = _binding!!
+    private lateinit var viewModel: HomeViewModel
 
-    private var binding: HomeFragmentBinding? = null
+    private lateinit var rankingItemAdapter: RankingItemAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        return inflater.inflate(R.layout.home_fragment, container, false)
+        _binding = HomeFragmentBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+        rankingItemAdapter = RankingItemAdapter()
+        binding.recyclerView.apply {
+            adapter = rankingItemAdapter
+            layoutManager = LinearLayoutManager(requireContext())
+        }
 
-        val rankingItemAdapter = RankingItemAdapter{ ranking -> adapterOnClick(ranking) }
-        val concatAdapter = ConcatAdapter()
+        viewModel = ViewModelProvider(this).get(HomeViewModel::class.java)
+        viewModel.rankingItemLive.observe(this.viewLifecycleOwner, Observer {
+            rankingItemAdapter.submitList(it)
+        })
 
-        val recyclerView : RecyclerView = view.findViewById(R.id.recyclerView)
-        recyclerView.adapter = concatAdapter
-
-
-
-    }
-
-    private fun adapterOnClick(rankingItem: RankingItem){
-        val intent = Intent(this.context,RankingItemDetailActivity()::class.java)
-        intent.putExtra(RANKING_ID, rankingItem.id)
-        startActivity(intent)
+        viewModel.rankingItemLive.value?:viewModel.fetchData()
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
-        binding = null
+        _binding = null
     }
 
 }

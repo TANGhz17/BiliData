@@ -13,9 +13,7 @@ import coil.load
 class VideoDataFragment : Fragment() {
 
     private var _binding: VideoDataFragmentBinding?=null
-
     private val binding get() = _binding!!
-
     private lateinit var viewModel: VideoDataViewModel
 
     override fun onCreateView(
