@@ -46,7 +46,7 @@ class UpDataFragment : Fragment() {
                     binding.UpNameView.text = viewModel.getName()
                     binding.UpInfoView.text = viewModel.getInfoView()
 
-                    return true
+                    return false
                 }
         })
 

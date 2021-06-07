@@ -1,10 +1,14 @@
 package cn.tanghz17.bilidata.ui.videoData
 
+import android.content.ClipData
+import android.content.ClipboardManager
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.SearchView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import cn.tanghz17.bilidata.databinding.VideoDataFragmentBinding
@@ -41,6 +45,17 @@ class VideoDataFragment : Fragment() {
                     return false
                 }
         })
+
+        binding.infoImageView.setOnClickListener {
+            //获取剪贴板管理器
+            val cm : ClipboardManager = it.context.getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
+            // 创建普通字符型
+            val mClipData : ClipData = ClipData.newPlainText("Label",
+                viewModel.videoDataLive.value?.owner?.mid.toString()
+            )
+            cm.setPrimaryClip(mClipData)
+            Toast.makeText(it.context,"已复制 ${viewModel.videoDataLive.value?.owner?.mid}", Toast.LENGTH_SHORT).show()
+        }
     }
 
     override fun onDestroyView() {
