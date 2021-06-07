@@ -22,6 +22,7 @@ class HomeViewModel(application: Application) : AndroidViewModel(application) {
             getUrl(),
             {
                 _rankingItemLive.value = Gson().fromJson(it, Ranking::class.java).data.toList()
+                Log.d("fetchData()",it.toString())
             },
             {
                 Log.d("fetchData()",it.toString())
