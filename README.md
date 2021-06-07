@@ -1,6 +1,6 @@
 # BiliData
 
-> 一个获取[哔哩哔哩](https://www.bilibili.com/)视频|up主|热门排行榜等信息的APP| an android apk about view [BiLiBiLi](https://www.bilibili.com/)-Data
+> 一个获取[哔哩哔哩](https://www.bilibili.com/)视频&up主&热门排行榜等信息的APP| an android apk about view [BiLiBiLi](https://www.bilibili.com/)-Data
 
 ## Installation | 安装
  - 下载最新的版本 | [Download Latest](https://github.com/TANGhz17/BiliData/releases)
