@@ -1,6 +1,9 @@
 # BiliData
 
 > 一个获取[哔哩哔哩](https://www.bilibili.com/)视频&up主&热门排行榜等信息的APP| an android apk about view [BiLiBiLi](https://www.bilibili.com/)-Data
+> 用于直接获取所需的B站视频的各项数据，面向视频作者使用的工具
+> 记录下的数据可以用来做视频分析
+> 自动分析B站最近的热点话题，方便视频作者更好的研究热度趋势
 
 ## Installation | 安装
  - 下载最新的版本 | [Download Latest](https://github.com/TANGhz17/BiliData/releases)
