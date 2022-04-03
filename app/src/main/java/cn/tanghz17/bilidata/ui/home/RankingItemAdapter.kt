@@ -1,7 +1,6 @@
 package cn.tanghz17.bilidata.ui.home
 
 import android.annotation.SuppressLint
-import android.app.Activity
 import android.content.ClipData
 import android.content.ClipboardManager
 import android.content.Context
