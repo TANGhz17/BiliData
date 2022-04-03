@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>demo</title>
+<!--    <link rel="stylesheet" href="file:///android_asset/css/demo.css">-->
+    <script type="text/javascript" src="file:///android_asset/js/wordcloud2.js"></script>
+    <script type="text/javascript" src="https://cdn.staticfile.org/echarts/4.3.0/echarts.min.js"></script>
+</head>
+
+<body>
+    <div id="canvas-container" style="float: left;">
+        <canvas id="canvas"></canvas>
+        <!-- <h1 class="title">title</h1> -->
+    </div>
+    <div id="echarts-container" style="float: left;width: 100%;height:200px;">
+
+    </div>
+    <script>
+        function wordCloud() {
+
+            var wordFreqData = [
+                    ['BiliBili', 45],
+                    ['可以的', 17],
+                    ['这个好', 24],
+                    ['哈哈哈哈哈哈', 50],
+                    ['不行', 14],
+                    ['别看了', 30],
+                    ['我在呀', 35],
+                    ['妙啊', 60],
+                    ['发个弹幕见证当下', 26],
+                    ['套娃', 28],
+                    ['再来一遍', 15]
+                ];
+            var canvas = document.getElementById('canvas');
+            var title = document.getElementById('title');
+            var options = eval({
+                "list": wordFreqData,
+                "gridSize": 2,
+                "weightFactor": 1,
+                "maxFontSize": 60,
+                "minFontSize": 14,
+                "fontWeight": 'normal',
+                "fontFamily": '微軟正黑體, 微軟正黑體',
+                "color": 'random-dark',
+                "background": '#333',
+                "rotateRatio": 1
+            });
+            WordCloud(canvas, options);
+        }
+    </script>
+
+    <script type="text/javascript">
+        function makeEChart(){
+            //指定图标的配置和数据
+            var option = {
+                title:{
+                    text:'播放量变化'
+                },
+                tooltip:{},
+                legend:{
+                    data:['时间线']
+                },
+                xAxis:{
+                    data:[
+                    "2022/04/01 00:00:00",
+                    "2022/04/01 00:01:00",
+                    "2022/04/01 00:02:00",
+                    "2022/04/01 00:03:00",
+                    "2022/04/01 00:04:00",
+                    "2022/04/01 00:05:00",
+                    "2022/04/01 00:06:00",
+                    "2022/04/01 00:07:00"
+                    ]
+                },
+                yAxis:{
+
+                },
+                series:[{
+                    name:'访问量',
+                    type:'line',
+                    data:[03,1000,1300,2000,3546,5536,9560,10058]
+                }]
+            };
+            //初始化echarts实例
+            var myChart = echarts.init(document.getElementById('echarts-container'));
+
+            //使用制定的配置项和数据显示图表
+            myChart.setOption(option);
+        }
+    </script>
+</body>
+
+</html>
+
+

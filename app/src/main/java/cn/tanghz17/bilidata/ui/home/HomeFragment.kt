@@ -28,13 +28,16 @@ class HomeFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
+//        初始化卡片控件
         rankingItemAdapter = RankingItemAdapter()
+//        添加卡片内容
         binding.recyclerView.apply {
             adapter = rankingItemAdapter
             layoutManager = LinearLayoutManager(requireContext())
         }
-
+//        初始化viewModel，连接HomeViewModel
         viewModel = ViewModelProvider(this).get(HomeViewModel::class.java)
+//
         viewModel.rankingItemLive.observe(this.viewLifecycleOwner, Observer {
             rankingItemAdapter.submitList(it)
             binding.swipeRefresh.isRefreshing = false

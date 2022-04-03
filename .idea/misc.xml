@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/AndroidStudioProjects/BiliData/app/src/main/res/layout/activity_ranking_item_detail.xml" value="0.14990942028985507" />
+        <entry key="..\:/AndroidStudioProjects/BiliData/app/src/main/res/layout/ranking_item.xml" value="0.14990942028985507" />
+        <entry key="..\:/AndroidStudioProjects/BiliData/app/src/main/res/layout/up_data_fragment.xml" value="0.1405775075987842" />
+        <entry key="..\:/AndroidStudioProjects/BiliData/app/src/main/res/layout/video_data_fragment.xml" value="0.264" />
+      </map>
+    </option>
+  </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>

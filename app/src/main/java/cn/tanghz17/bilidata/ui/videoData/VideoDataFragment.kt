@@ -7,10 +7,12 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.webkit.WebSettings
 import android.widget.SearchView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import cn.tanghz17.bilidata.MainActivity
 import cn.tanghz17.bilidata.databinding.VideoDataFragmentBinding
 import coil.load
 
@@ -33,6 +35,15 @@ class VideoDataFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProvider(this).get(VideoDataViewModel::class.java)
 
+        //test
+        val webSettings:WebSettings = binding.webView.settings
+        //与js交互
+        webSettings.javaScriptEnabled=true
+        binding.webView.loadUrl("file:///android_asset/index1.html")
+//        binding.webView.loadUrl("http://127.0.0.1:8080/index.html")
+        binding.webView.addJavascriptInterface(this.binding,"android")
+
+
         binding.videoSearchView.setOnQueryTextListener(
             object : SearchView.OnQueryTextListener{
                 override fun onQueryTextChange(newText: String?): Boolean {
@@ -42,6 +53,8 @@ class VideoDataFragment : Fragment() {
                 override fun onQueryTextSubmit(query: String?): Boolean {
                     binding.infoView.text=viewModel.getInfoView()
                     binding.infoImageView.load(viewModel.getImageURI())
+                    binding.webView.loadUrl("javascript:wordCloud()")
+                    binding.webView.loadUrl("javascript:makeEChart()")
                     return false
                 }
         })
